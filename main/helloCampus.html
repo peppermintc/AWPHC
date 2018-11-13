@@ -11,7 +11,7 @@
   .menu { background:white; margin-left:60px; margin-right:60px; margin-top:33px; }
   .body { background:#CBCBCB }
 
-  /* Effect 1: Brackets */
+  /* 마우스오버 효과 */
 .cl-effect-1 a::before,
 .cl-effect-1 a::after {
 	display: inline-block;
@@ -46,6 +46,37 @@
 	-moz-transform: translateX(0px);
 	transform: translateX(0px);
 }
+
+
+/* 드롭다운 메뉴 */
+.menu-dropdown {
+  margin-left:60px; margin-right:60px; margin-top:33px;
+}
+
+.menu-dropdown ul {
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:0;
+padding:0px;
+margin:0px;
+border:0px;
+position:absolute;
+width: 130px;
+z-index:200;
+}
+
+.menu-dropdown ul li{
+background:white;
+height:auto;
+padding:15px;
+margin:0px;
+border:0px;
+width: 160px;
+}
+
+.menu-dropdown:hover ul {
+display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+
 </style>
 </head>
 <body class = "body">
@@ -55,10 +86,18 @@
     <a href="#"><img src="..\images\logo.jpg" height="100px" border="0" align="left"></a>
     <ul class="cl-effect-1">
       <li class = "menu"><a href="#">ABOUT</a></li>
-      <li class = "menu"><a href="#">INTERVIEW</a></li>
+      <li class = "menu-dropdown"><a href="#">INTERVIEW</a>
+        <ul>  <!--드롭다운-->
+          <li><a href="#">Jun Gong 1</a></li>
+          <li><a href="#">Jun Gong 2</a></li>
+          <li><a href="#">Jun Gong 3</a></li>
+          <li><a href="#">Jun Gong 4</a></li>
+        </ul>
+      </li>
       <li class = "menu"><a href="#">SEARCH</a></li>
       <li class = "menu"><a href="#">CONTACT</a></li>
     </ul>
   </div>
+  <img src="..\images\bg1.png" style="max-width: 100%; height: auto;" border="0" >
 </body>
 </html>
